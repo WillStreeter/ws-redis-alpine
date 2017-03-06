@@ -1,7 +1,5 @@
-
-TAG=d0536d0e59fe
-VERSION=v0.0.1
-
+TAG = $(shell echo `grep "TAG=" ./redis.config.env | sed 's/.*=//'`)
+VERSION = $(shell echo `grep "VERSION=" ./redis.config.env | sed 's/.*=//'`)
 
 build:
 	docker build -t ws-redis-alpine .
